@@ -16,16 +16,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&family=Parisienne&display=swap" rel="stylesheet">
 <style>
   :root{
-    --cream:#F7F3EA;
-    --cream-2:#FBF9F3;
-    --ink:#2B2E23;
-    --olive-dark:#3F4B31;
-    --olive:#6E7C55;
-    --olive-light:#A9B58C;
-    --gold:#B8935A;
-    --gold-light:#D8C39B;
-    --line:rgba(63,75,49,0.18);
-    --shadow:0 10px 30px rgba(43,46,35,0.08);
+    --cream:#FAF2EA;
+    --cream-2:#FDF8F4;
+    --ink:#3B241C;
+    --olive-dark:#8B3A2B;
+    --olive:#C1613F;
+    --olive-light:#E3A583;
+    --gold:#A9502F;
+    --gold-light:#E7C4A8;
+    --line:rgba(139,58,43,0.18);
+    --shadow:0 10px 30px rgba(59,36,28,0.08);
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -75,19 +75,7 @@
 
   /* ---------- Hero ---------- */
   #hero{ padding-top:70px; }
-  .arch-wrap{ width:min(560px,86vw); margin:0 auto; }
-  .arch-wrap svg{ width:100%; height:auto; display:block; }
-  .arch-path{
-    fill:none; stroke:var(--olive); stroke-width:2.2; stroke-linecap:round;
-    stroke-dasharray:1400; stroke-dashoffset:1400;
-    animation:draw 2.6s ease forwards .2s;
-  }
-  .leaf{ fill:var(--olive); opacity:0; animation:leafIn .6s ease forwards; }
-  @keyframes draw{ to{ stroke-dashoffset:0; } }
-  @keyframes leafIn{ to{ opacity:1; } }
-  .hero-inner{ margin-top:-330px; }
-  @media (max-width:720px){ .hero-inner{ margin-top:-240px; } }
-  @media (max-width:400px){ .hero-inner{ margin-top:-210px; } }
+  .hero-inner{ margin-top:0; }
   .eyebrow{
     letter-spacing:.32em; text-transform:uppercase; font-size:12px;
     color:var(--olive-dark); opacity:0; animation:rise .8s ease forwards 1.6s;
@@ -212,12 +200,13 @@
   .copy-btn:hover{ background:var(--olive); color:#fff; }
   .copy-btn.copied{ background:var(--olive-dark); color:#fff; border-color:var(--olive-dark); }
 
-  /* ---------- hashtag ---------- */
+  /* ---------- hashtag / QR ---------- */
   #hashtag{ padding-top:50px; padding-bottom:50px; min-height:auto; background:var(--cream-2); }
-  .hashtag-pill{
-    margin-top:16px; display:inline-block; padding:12px 28px; border:1px solid var(--gold);
-    color:var(--olive-dark); font-family:'Cormorant Garamond',serif; font-style:italic; font-size:22px;
+  .qr-wrap{
+    margin:22px auto 0; width:200px; height:200px; padding:12px; background:#fff;
+    border:1px solid var(--line); box-shadow:var(--shadow);
   }
+  .qr-wrap img{ width:100%; height:100%; display:block; }
 
   /* ---------- RSVP ---------- */
   #rsvp{ background:var(--olive-dark); color:var(--cream-2); }
@@ -342,12 +331,6 @@
 
 <!-- ================= HERO ================= -->
 <section id="hero">
-  <div class="arch-wrap">
-    <svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg">
-      <path class="arch-path" d="M40,340 C40,140 160,30 280,30 C400,30 520,140 520,340" />
-      <g id="leaves"></g>
-    </svg>
-  </div>
   <div class="hero-inner">
     <div class="eyebrow">Con la bendición de Dios, nos casamos</div>
     <h1 class="names">Damelis<span class="amp">&amp;</span>Mario</h1>
@@ -401,7 +384,7 @@
     </p>
     <div class="song-embed">
       <!-- Reemplaza el ID de la canción por el de su tema favorito (instrucciones en el chat) -->
-      <iframe src="https://www.youtube.com/embed/F23i1p_V64E" height="215" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe src="https://open.spotify.com/embed/track/PEGA_AQUI_EL_ID_DE_LA_CANCION?utm_source=generator&theme=0" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
   </div>
 </section>
@@ -415,7 +398,7 @@
   </div>
   <div class="card-row reveal">
     <div class="card">
-      <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#B8935A" stroke-width="1.4"><path d="M12 2v6M8 5h8M6 22V11l6-4 6 4v11M6 22h12M10 22v-6h4v6"/></svg>
+      <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#A9502F" stroke-width="1.4"><path d="M12 2v6M8 5h8M6 22V11l6-4 6 4v11M6 22h12M10 22v-6h4v6"/></svg>
       <h3>Ceremonia</h3>
       <div class="sub">4:00 PM</div>
       <p>Iglesia Adventista del Séptimo Día</p>
@@ -424,7 +407,7 @@
       <a class="btn" href="https://maps.app.goo.gl/2KBdR7uWdNrxDvBn7" target="_blank" rel="noopener">Ver en el mapa</a>
     </div>
     <div class="card">
-      <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#B8935A" stroke-width="1.4"><path d="M4 21V9l8-6 8 6v12M9 21v-8h6v8"/></svg>
+      <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#A9502F" stroke-width="1.4"><path d="M4 21V9l8-6 8 6v12M9 21v-8h6v8"/></svg>
       <h3>Recepción</h3>
       <div class="sub">6:30 PM</div>
       <p>[Nombre del salón / lugar]</p>
@@ -442,14 +425,15 @@
     <h2 class="serif" style="font-size:26px; color:var(--olive-dark); font-weight:500;">Formal elegante</h2>
     <p style="max-width:480px; font-size:15px; line-height:1.8; margin-top:14px;">
       Nos encantaría que nos acompañen con atuendo formal y modesto, acorde a la solemnidad
-      de la ceremonia. Evitar los colores blanco y verde olivo, reservados para los novios.
+      de la ceremonia. Evitar el terracota naranjado, terracota rosado, terracota ladrillo,
+      terracota rojizo y el blanco, reservados para los novios.
     </p>
     <div class="swatches">
-      <div class="swatch" style="background:#B8935A;"></div>
-      <div class="swatch" style="background:#3F4B31;"></div>
-      <div class="swatch" style="background:#D8C39B;"></div>
-      <div class="swatch" style="background:#2B2E23;"></div>
-      <div class="swatch" style="background:#8C6A46;"></div>
+      <div class="swatch" style="background:#CC6B3F;"></div>
+      <div class="swatch" style="background:#E0A38A;"></div>
+      <div class="swatch" style="background:#9C4A3C;"></div>
+      <div class="swatch" style="background:#A13A2A;"></div>
+      <div class="swatch" style="background:#FFFFFF;"></div>
     </div>
   </div>
 </section>
@@ -476,24 +460,29 @@
     </div>
     <div class="bank-card">
       <h4>Cuenta de la novia</h4>
-      <div class="bank-line"><span>Banco</span><span>[Nombre del banco]</span></div>
-      <div class="bank-line"><span>Titular</span><span>Marielys [Apellido]</span></div>
-      <div class="bank-line"><span>Cuenta</span><span id="acc2">000-000000-0</span></div>
+      <div class="bank-line"><span>Banco</span><span>Banreservas</span></div>
+      <div class="bank-line"><span>Titular</span><span>Damelis Miguelina Hernández Guerrero</span></div>
+      <div class="bank-line"><span>Cuenta</span><span id="acc2">9606085668</span></div>
       <div class="bank-line"><span>Tipo</span><span>Ahorros</span></div>
       <button class="copy-btn" onclick="copyAccount('acc2', this)">Copiar número de cuenta</button>
     </div>
   </div>
 </section>
 
-<!-- ================= HASHTAG ================= -->
+<!-- ================= HASHTAG / QR ================= -->
 <section id="hashtag">
   <div class="reveal">
     <div class="kicker">Comparte el momento</div>
-    <h2 class="serif" style="font-size:26px; color:var(--olive-dark); font-weight:500;">Etiqueta tus fotos con</h2>
-    <div class="hashtag-pill">#DamelisYMario2027</div>
-    <p style="max-width:420px; font-size:14px; color:var(--olive); margin-top:16px;">
-      Así podremos ver el día desde todos los ángulos, ¡gracias a ustedes!
+    <h2 class="serif" style="font-size:26px; color:var(--olive-dark); font-weight:500;">Sube tus fotos y videos</h2>
+    <div class="divider"></div>
+    <p style="max-width:420px; font-size:14px; color:var(--olive);">
+      Escanea el código con tu celular para guardar tus recuerdos del día en nuestra carpeta de Google Drive.
     </p>
+    <!-- Reemplaza la URL en ambos lugares (data= del QR y el botón) por el enlace de tu carpeta de Drive -->
+    <div class="qr-wrap">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fdrive.google.com%2Fdrive%2Ffolders%2FPEGA_AQUI_EL_ID_DE_TU_CARPETA" alt="Código QR para subir fotos y videos a Google Drive">
+    </div>
+    <a class="btn" style="margin-top:20px;" href="https://drive.google.com/drive/folders/PEGA_AQUI_EL_ID_DE_TU_CARPETA" target="_blank" rel="noopener">Abrir carpeta de Drive</a>
   </div>
 </section>
 
@@ -556,25 +545,6 @@
     overlay.classList.add('closing');
     document.body.style.overflow = '';
     setTimeout(()=>{ overlay.style.display = 'none'; }, 850);
-  });
-
-  // ---- arch leaves ----
-  const leafPositions = [
-    [95,255,-25],[70,190,-40],[58,130,-55],[70,75,-70],[110,40,-85],
-    [465,255,25],[490,190,40],[502,130,55],[490,75,70],[450,40,85],
-    [280,32,0]
-  ];
-  const leavesG = document.getElementById('leaves');
-  leafPositions.forEach((p,i)=>{
-    const el = document.createElementNS('http://www.w3.org/2000/svg','ellipse');
-    el.setAttribute('cx', p[0]);
-    el.setAttribute('cy', p[1]);
-    el.setAttribute('rx', 9);
-    el.setAttribute('ry', 4.5);
-    el.setAttribute('class','leaf');
-    el.setAttribute('transform', `rotate(${p[2]} ${p[0]} ${p[1]})`);
-    el.style.animationDelay = (0.9 + i*0.09) + 's';
-    leavesG.appendChild(el);
   });
 
   // ---- countdown ----
