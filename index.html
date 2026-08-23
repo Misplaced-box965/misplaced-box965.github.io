@@ -4,6 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Damelis & Mario — 21 de febrero, 2027</title>
+<meta name="description" content="Acompáñanos a celebrar la boda de Damelis &amp; Mario el 21 de febrero de 2027.">
+<meta property="og:title" content="Damelis & Mario — Nos casamos">
+<meta property="og:description" content="Con la bendición de Dios, nos casamos el 21 de febrero de 2027. ¡Queremos que nos acompañes!">
+<meta property="og:type" content="website">
+<!-- Opcional: agrega tu propia imagen de portada subiéndola al repositorio y usando su URL aquí -->
+<!-- <meta property="og:image" content="https://tuusuario.github.io/tu-repo/portada.jpg"> -->
+<link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&family=Parisienne&display=swap" rel="stylesheet">
@@ -151,6 +158,11 @@
     font-family:'Parisienne',cursive; font-size:26px; color:var(--gold);
   }
 
+  /* ---------- canción ---------- */
+  #cancion{ padding-top:60px; padding-bottom:60px; min-height:auto; }
+  .song-embed{ width:100%; max-width:420px; margin-top:26px; }
+  .song-embed iframe{ width:100%; border-radius:12px; display:block; }
+
   /* ---------- details / cards ---------- */
   .card-row{
     display:grid; grid-template-columns:1fr 1fr; gap:26px; width:100%; max-width:760px; margin-top:36px;
@@ -200,6 +212,13 @@
   .copy-btn:hover{ background:var(--olive); color:#fff; }
   .copy-btn.copied{ background:var(--olive-dark); color:#fff; border-color:var(--olive-dark); }
 
+  /* ---------- hashtag ---------- */
+  #hashtag{ padding-top:50px; padding-bottom:50px; min-height:auto; background:var(--cream-2); }
+  .hashtag-pill{
+    margin-top:16px; display:inline-block; padding:12px 28px; border:1px solid var(--gold);
+    color:var(--olive-dark); font-family:'Cormorant Garamond',serif; font-style:italic; font-size:22px;
+  }
+
   /* ---------- RSVP ---------- */
   #rsvp{ background:var(--olive-dark); color:var(--cream-2); }
   #rsvp .kicker{ color:var(--gold-light); }
@@ -222,8 +241,11 @@
     transition:background .25s;
   }
   .submit-btn:hover{ background:var(--gold-light); }
+  .submit-btn:disabled{ opacity:.6; cursor:not-allowed; }
   .rsvp-thanks{ display:none; margin-top:20px; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:19px; }
   .rsvp-thanks.show{ display:block; }
+  .rsvp-error{ display:none; margin-top:14px; font-size:13px; color:#E7B4A6; }
+  .rsvp-error.show{ display:block; }
 
   footer{
     padding:50px 8vw 40px; text-align:center; background:var(--cream);
@@ -311,8 +333,10 @@
   <a href="#hero" class="active"></a>
   <a href="#countdown"></a>
   <a href="#story"></a>
+  <a href="#cancion"></a>
   <a href="#detalles"></a>
   <a href="#regalo"></a>
+  <a href="#hashtag"></a>
   <a href="#rsvp"></a>
 </nav>
 
@@ -363,6 +387,22 @@
       vidas frente a Dios. Dos o tres frases sencillas y sinceras son suficientes — este espacio es
       para que lo reemplaces con sus propias palabras.]
     </p>
+  </div>
+</section>
+
+<!-- ================= NUESTRA CANCIÓN ================= -->
+<section id="cancion">
+  <div class="reveal">
+    <div class="kicker">Nuestra música</div>
+    <h2 class="serif" style="font-size:clamp(26px,4vw,34px); color:var(--olive-dark); font-weight:500;">Nuestra canción</h2>
+    <div class="divider"></div>
+    <p style="max-width:480px; font-size:15px; line-height:1.8;">
+      Esta melodía forma parte de nuestra historia. Dale play mientras conoces los detalles de nuestro gran día.
+    </p>
+    <div class="song-embed">
+      <!-- Reemplaza el ID de la canción por el de su tema favorito (instrucciones en el chat) -->
+      <iframe src="https://www.youtube.com/embed/F23i1p_V64E" height="215" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
   </div>
 </section>
 
@@ -445,13 +485,25 @@
   </div>
 </section>
 
+<!-- ================= HASHTAG ================= -->
+<section id="hashtag">
+  <div class="reveal">
+    <div class="kicker">Comparte el momento</div>
+    <h2 class="serif" style="font-size:26px; color:var(--olive-dark); font-weight:500;">Etiqueta tus fotos con</h2>
+    <div class="hashtag-pill">#DamelisYMario2027</div>
+    <p style="max-width:420px; font-size:14px; color:var(--olive); margin-top:16px;">
+      Así podremos ver el día desde todos los ángulos, ¡gracias a ustedes!
+    </p>
+  </div>
+</section>
+
 <!-- ================= RSVP ================= -->
 <section id="rsvp">
   <div class="reveal">
     <div class="kicker">Antes del 1 de enero de 2027</div>
     <h2>Confirma tu asistencia</h2>
     <p style="max-width:420px; font-size:14px; color:var(--gold-light); margin-top:10px;">
-      Completa el formulario y se abrirá WhatsApp con tu confirmación lista para enviarnos.
+      Completa el formulario y tu confirmación se guardará automáticamente en nuestra lista de invitados.
     </p>
   </div>
   <form class="form reveal" id="rsvpForm">
@@ -468,14 +520,11 @@
       </select>
     </div>
     <div>
-      <label for="acompanantes">Número de acompañantes</label>
-      <input type="number" id="acompanantes" min="0" max="6" value="0">
-    </div>
-    <div>
       <label for="mensaje">Mensaje para los novios (opcional)</label>
       <textarea id="mensaje" placeholder="Un deseo, una oración, un buen chiste..."></textarea>
     </div>
     <button type="submit" class="submit-btn">Enviar confirmación</button>
+    <div class="rsvp-error" id="rsvpError">Hubo un problema al enviar. Intenta de nuevo, por favor.</div>
     <div class="rsvp-thanks" id="rsvpThanks">Gracias por confirmar. ¡Nos alegra mucho contar contigo ese día!</div>
   </form>
 </section>
@@ -561,7 +610,7 @@
   revealEls.forEach(el=>io.observe(el));
 
   // ---- nav dots active state ----
-  const sections = ['hero','countdown','story','detalles','regalo','rsvp'].map(id=>document.getElementById(id));
+  const sections = ['hero','countdown','story','cancion','detalles','regalo','hashtag','rsvp'].map(id=>document.getElementById(id));
   const dotLinks = document.querySelectorAll('.dots a');
   const navIO = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
@@ -585,22 +634,49 @@
     });
   }
 
-  // ---- RSVP -> WhatsApp ----
+  // ---- RSVP -> Google Sheets (lista de invitados en Excel/Sheets) ----
+  // 1) Reemplaza la URL de abajo por la de tu Google Apps Script Web App.
+  //    Instrucciones completas en el mensaje del chat donde se te entregó este archivo.
+  const GOOGLE_SCRIPT_URL = 'PEGA_AQUI_TU_URL_DE_GOOGLE_APPS_SCRIPT';
+
   document.getElementById('rsvpForm').addEventListener('submit', function(e){
     e.preventDefault();
     const nombre = document.getElementById('nombre').value;
     const asistencia = document.getElementById('asistencia').value;
-    const acompanantes = document.getElementById('acompanantes').value;
     const mensaje = document.getElementById('mensaje').value;
+    const submitBtn = this.querySelector('.submit-btn');
+    const thanksEl = document.getElementById('rsvpThanks');
+    const errorEl = document.getElementById('rsvpError');
 
-    let texto = `Confirmación de asistencia%0A%0ANombre: ${encodeURIComponent(nombre)}%0AAsistencia: ${encodeURIComponent(asistencia)}%0AAcompañantes: ${encodeURIComponent(acompanantes)}`;
-    if(mensaje){ texto += `%0AMensaje: ${encodeURIComponent(mensaje)}`; }
+    thanksEl.classList.remove('show');
+    errorEl.classList.remove('show');
 
-    const telefono = '18099021519'; // [Reemplazar con el número de WhatsApp de los novios, con código de país]
-    const url = `https://wa.me/${telefono}?text=${texto}`;
+    if(GOOGLE_SCRIPT_URL.indexOf('PEGA_AQUI') !== -1){
+      errorEl.textContent = 'Aún falta conectar el formulario a la hoja de cálculo (ver instrucciones).';
+      errorEl.classList.add('show');
+      return;
+    }
 
-    document.getElementById('rsvpThanks').classList.add('show');
-    window.open(url, '_blank');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+
+    fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify({ nombre, asistencia, mensaje, fecha: new Date().toISOString() })
+    })
+    .then(() => {
+      thanksEl.classList.add('show');
+      this.reset();
+    })
+    .catch(() => {
+      errorEl.classList.add('show');
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Enviar confirmación';
+    });
   });
 </script>
 
